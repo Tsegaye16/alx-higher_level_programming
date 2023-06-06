@@ -4,4 +4,3 @@ def remove_char_at(string, n):
         return string
     else:
         return string[:n] + string[n+1:]
-
