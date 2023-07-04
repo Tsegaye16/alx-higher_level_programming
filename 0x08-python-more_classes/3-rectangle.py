@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-The goal of this module is to present a defined structure for a Rectangle object.
+This module defines the a Rectangle Object.
 """
 
 
