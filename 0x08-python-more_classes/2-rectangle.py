@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-"""
+'''
 The goal of this module is to present a defined structure for a Rectangle object.
-"""
-
-
+'''
 class Rectangle:
     """Retangle object with getter and setters
     """
