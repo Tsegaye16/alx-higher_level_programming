@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+'''this defines an integer addition methods.'''
+
 
 def add_integer(a, b=98):
     if ((not isinstance(a, int) and not isinstance(a, float))):
