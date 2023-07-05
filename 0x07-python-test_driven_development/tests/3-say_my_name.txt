@@ -1,0 +1,68 @@
+How to Use 3-say_my_name.py
+===========================
+
+This module defines a method ``say_my_name(first_name, last_name="")`` that prints the name.
+
+Usage
+=====
+
+The method ``say_my_name(...)`` prints the provided first and last name.
+
+Example 1:
+-----------
+Input:
+    >>> say_my_name("John", "Doe")
+
+Output:
+    My name is John Doe
+
+Example 2:
+-----------
+Input:
+    >>> say_my_name("Alice")
+
+Output:
+    My name is Alice
+
+Invalid Input
+==============
+
+The parameter ``first_name`` must be a string. If it is not a string, a TypeError is raised.
+
+Example 1:
+-----------
+Input:
+    >>> say_my_name(123, "Doe")
+
+Output:
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Example 2:
+-----------
+Input:
+    >>> say_my_name(None, "Doe")
+
+Output:
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+The parameter ``last_name`` must also be a string. If it is not a string, a TypeError is raised.
+
+Example 1:
+-----------
+Input:
+    >>> say_my_name("John", 123)
+
+Output:
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Example 2:
+-----------
+Input:
+    >>> say_my_name("Alice", None)
+
+Output:
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
