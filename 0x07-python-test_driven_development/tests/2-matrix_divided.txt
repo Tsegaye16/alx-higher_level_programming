@@ -1,0 +1,17 @@
+Divide all elements of a matrix by a given number.
+
+Args:
+	matrix (list of lists): The input matrix containing integers or floats.
+        div (int or float): The number to divide the matrix elements by.
+
+Returns:
+	list of lists: A new matrix where each element is the result of dividing the
+                       corresponding element from the input matrix by the given div,
+                       rounded to 2 decimal places.
+
+Raises:
+	TypeError: If the input matrix is not a valid matrix (list of lists of integers/floats),
+                   or if the div is not a number.
+        TypeError: If each row of the matrix does not have the same size.
+        ZeroDivisionError: If div is equal to zero.
+    
