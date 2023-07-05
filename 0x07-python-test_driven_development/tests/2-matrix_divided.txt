@@ -1,17 +1,67 @@
-Divide all elements of a matrix by a given number.
+How to Use 2-matrix_divided.py
+==============================
 
-Args:
-	matrix (list of lists): The input matrix containing integers or floats.
-        div (int or float): The number to divide the matrix elements by.
+This module defines a matrix division function `matrix_divided(matrix, div)`.
 
-Returns:
-	list of lists: A new matrix where each element is the result of dividing the
-                       corresponding element from the input matrix by the given div,
-                       rounded to 2 decimal places.
+Usage
+=====
 
-Raises:
-	TypeError: If the input matrix is not a valid matrix (list of lists of integers/floats),
-                   or if the div is not a number.
-        TypeError: If each row of the matrix does not have the same size.
-        ZeroDivisionError: If div is equal to zero.
-    
+`matrix_divided(...)` returns a new matrix that is a copy of the parameter
+`matrix` with all elements divided by `div`.
+
+Examples:
+---------
+
+Dividing matrix elements by an integer:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [
+    ...     [3, 6, 9],
+    ...     [12, 15, 18]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+Dividing matrix elements by a floating-point number:
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+The original matrix is left unchanged:
+
+    >>> print(matrix)
+    [[1, 2, 3], [4, 5, 6]]
+
+Handling floating-point numbers:
+
+    >>> matrix = [
+    ...     [1.1, -2.2, 3.3],
+    ...     [4.4, 5.5, -6.6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.37, -0.73, 1.1], [1.47, 1.83, -2.2]]
+
+Combining integers and floats:
+
+    >>> matrix = [
+    ...     [1, -2.2, 3, 4.4, 5],
+    ...     [-6.6, 7.00, 8, 9.999, 10]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, -0.73, 1.0, 1.47, 1.67], [-2.2, 2.33, 2.67, 3.33, 3.33]]
+
+Invalid Matrices
+===============
+
+The parameter `matrix` must be a list of lists consisting of either integers or
+floats. If `matrix` is not a list or contains non-numeric elements, a TypeError is raised.
+
+Invalid Divisors
+================
+
+The parameter `div` must be either an integer or float. If `div` is not a number or is equal to zero, a TypeError or ZeroDivisionError is raised, respectively.
+
