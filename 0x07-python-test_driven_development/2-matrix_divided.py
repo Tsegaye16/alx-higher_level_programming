@@ -3,7 +3,7 @@
 
 
 def matrix_divided(matrix, div):
-   '''dividing all elements of a matrix.
+    '''dividing all elements of a matrix.
 
     Arguments:
         matrix (list): A list of lists of ints or floats.
@@ -15,7 +15,7 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is 0.
     Returns:
         A new matrix representing the result of the division.
-    ''' 
+    '''
     if (not isinstance(matrix, list) or matrix == [] or
             not all(isinstance(row, list) for row in matrix) or
             not all((isinstance(ele, int) or isinstance(ele, float))
