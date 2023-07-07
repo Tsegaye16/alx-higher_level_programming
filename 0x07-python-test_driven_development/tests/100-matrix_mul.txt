@@ -2,12 +2,12 @@
 How to Use 100-matrix_mul.py
 ----------------------------
 
-This module defines a matrix multiplication function ``matrix_mul(m_a, m_b)``.
+This module defines a matrix multiplication function ''matrix_mul(m_a, m_b)''.
 
 Usage
 -----
-``matrix_mul(...)`` returns a new matrix representing the multiplication of
-``m_a`` by ``m_b``.
+''matrix_mul(...)'' returns a new matrix representing the multiplication of
+''m_a'' by ''m_b''.
 
 ::
 
@@ -82,7 +82,7 @@ A minimum of two arguments must be provided. Otherwise, a TypeError is raised.
 ValueErrors
 -----------
 
-If two matrices cannot be multiplied (ie. the row count of ``m_a`` is not
+If two matrices cannot be multiplied (ie. the row count of ''m_a'' is not
 equal to the column count in ``m_b``), a ValueError is raised.
 
 ::
@@ -101,7 +101,7 @@ equal to the column count in ``m_b``), a ValueError is raised.
     ValueError: m_a and m_b can't be multiplied
 
 
-The parameters ``m_a`` and ``m_b`` cannot be empty. Otherwise, a ValueError
+The parameters ''m_a'' and ''m_b'' cannot be empty. Otherwise, a ValueError
 is raised.
 
 ::
@@ -125,7 +125,7 @@ is raised.
 Invalid Matrices
 -----------------
 
-The parameters ``m_a`` and ``m_b`` must be lists. If either parameter is
+The parameters ''m_a'' and ''m_b'' must be lists. If either parameter is
 not a list, a TypeError is raised.
 
 ::
@@ -193,7 +193,7 @@ integers or floats!
     Traceback (most recent call last):
     TypeError: m_a should contain only integers or floats
 
-Finally, the length of all rows in matrices ``m_a`` and ``m_b`` should be
+Finally, the length of all rows in matrices ''m_a'' and ''m_b'' should be
 equivalent. Otherwise, a TypeError is raised.
 
 ::
@@ -234,17 +234,3 @@ equivalent. Otherwise, a TypeError is raised.
     >>> print(matrix_mul(m_a, m_b))
     Traceback (most recent call last):
     TypeError: each row of m_a must should be of the same size
-::
-Exceptions
-----------
-:- A minimum of two arguments must be provided. Otherwise, a TypeError is raised.
-
-:- If two matrices cannot be multiplied (i.e., the row count of m_a is not equal to the column count in m_b), a ValueError is raised.
-
-:- The parameters m_a and m_b cannot be empty. Otherwise, a ValueError is raised.
-
-:- The parameters m_a and m_b must be lists. If either parameter is not a list, a TypeError is raised.
-
-:- The parameters m_a and m_b must be lists of lists containing integers or floats. If any element in m_a or m_b is not an integer or a float, a TypeError is raised.
-
-:- The length of all rows in matrices m_a and m_b should be equivalent. Otherwise, a TypeError is raised.
