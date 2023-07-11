@@ -9,8 +9,8 @@ class BaseGeometry:
     """
     def area(self):
         """unimplemented method"""
-
         raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         """Validates value to be an int grater than 0.
 
