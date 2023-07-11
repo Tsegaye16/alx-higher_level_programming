@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-''' 
-    defining the function that displays json representation of string
+'''defining the function that displays
+    json representation of string
 '''
 
 import json
