@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-''' function that returns the number of lines of a text file
+''' function that returns the number
+    of lines of a text file
 '''
 
 
