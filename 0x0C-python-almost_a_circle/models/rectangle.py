@@ -19,6 +19,66 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+     @property
+    def width(self):
+        '''
+            prints private attribute(width)
+        '''
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        '''
+            set private attributes(width)
+        '''
+        self.setter_validation("width", value)
+        self.__width = value
+
+    @property
+    def height(self):
+        '''
+            print private attribute(height)
+        '''
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        '''
+            set private attribute(height)
+        '''
+        self.setter_validation("height", value)
+        self.__height = value
+
+    @property
+    def x(self):
+        '''
+            print private attribute(x)
+        '''
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        '''
+            set private attribute(x)
+        '''
+        self.setter_validation("x", value)
+        self.__x = value
+
+    @property
+    def y(self):
+        '''
+            print private attribute(y)
+        '''
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        '''
+            set private attribute(y)
+        '''
+        self.setter_validation("y", value)
+        self.__y = value
+
     @staticmethod
     def setter_validation(attribute, value):
         if type(value) != int:
