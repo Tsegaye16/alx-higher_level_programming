@@ -79,26 +79,41 @@ class Rectangle(Base):
         self.setter_validation("y", value)
         self.__y = value
 
+    @staticmethod
+    def setter_validation(attribute, value):
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(attribute))
+        if attribute == "x" or attribute == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(attribute))
+        elif value <= 0:
+            raise ValueError("{} must be > 0".format(attribute))
 
     def area(self):
         '''
-            this method used to rectangle
+            Returns the area of the rectangle
         '''
         return (self.height * self.width)
-
     def display(self):
         '''
-            this method used to pring stdout representation of the rectangle
+            display stdout representation of the rectangle
         '''
         rectangle = ""
         print("\n" * self.y, end="")
-        for i in range(self.height):
+        for n in range(self.height):
             rectangle += (" " * self.x) + ("#" * self.width) + "\n"
         print(rectangle, end="")
 
+    def __str__(self):
+        '''
+            Overwritting the str method
+        '''
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
+
     def update(self, *args, **kwargs):
         '''
-            Updating arguments in the class
+            Updates the arguments in the class
         '''
         if len(args) == 0:
             for key, val in kwargs.items():
@@ -115,27 +130,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         '''
-            used to display dictionary representation of class
+            Display a dictionary representation of this class
         '''
         return {'x': getattr(self, "x"),
                 'y': getattr(self, "y"),
                 'id': getattr(self, "id"),
                 'height': getattr(self, "height"),
                 'width': getattr(self, "width")}
-
-    @staticmethod
-    def setter_validation(attribute, value):
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(attribute))
-        if attribute == "x" or attribute == "y":
-            if value < 0:
-                raise ValueError("{} must be >= 0".format(attribute))
-        elif value <= 0:
-            raise ValueError("{} must be > 0".format(attribute))
-
-    def __str__(self):
-        '''
-            Overwritting the str method
-        '''
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
-                                                       self.width, self.height)
