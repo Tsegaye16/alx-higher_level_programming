@@ -1,85 +1,83 @@
 #!/usr/bin/python3
 '''
-    Rectangle class
+    Class Rectangle
 '''
+from models.base import Base
+
+
 class Rectangle(Base):
-    '''defining Rectangle class
-        that inherited from base
     '''
+        Defining the Rectangle class
+        Inherits from:
+            Base
+    '''
+
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
-        '''print private variable(width)'''
+        '''
+            Returning private attribute
+        '''
         return self.__width
 
     @width.setter
     def width(self, value):
-        '''set private variable(width)'''
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(value))
-        elif value <= 0:
-            raise ValueError("{} must be > 0".format(value))
-        else:
-            self.__width = value
+        '''
+            Setting private attribute
+        '''
+        self.setter_validation("width", value)
+        self.__width = value
 
     @property
     def height(self):
         '''
-            print private variable(height)
+            Returning private attribute
         '''
         return self.__height
 
     @height.setter
     def height(self, value):
         '''
-            set private variable(height)
+            Setting private attribute
         '''
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(value))
-        elif value <= 0:
-            raise ValueError("{} must be > 0".format(value))
-        else:
-            self.__height = value
+        self.setter_validation("height", value)
+        self.__height = value
 
     @property
     def x(self):
         '''
-            print private variable(x)
+            Returning private attribute
         '''
         return self.__x
 
     @x.setter
     def x(self, value):
         '''
-            set private variable(x)
+            Setting private attribute
         '''
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(value))
-        elif value < 0:
-            raise ValueError("{} must be >= 0".format(value))
-        else:
-            self.__x = value
+        self.setter_validation("x", value)
+        self.__x = value
 
     @property
     def y(self):
-        '''print private variable(y)'''
+        '''
+            Returning private attribute
+        '''
         return self.__y
 
     @y.setter
     def y(self, value):
-        '''set private variable(y)'''
-        if not isinstance(value, int):
-            raise TypeError( "{} must be an integer".format(value))
-        elif value < 0:
-            raise ValueError("{} must be >= 0".format(value))
-        else:
-            self.__y = value
+        '''
+            Setting private attribute
+        '''
+        self.setter_validation("y", value)
+        self.__y = value
 
     def area(self):
         '''
@@ -114,21 +112,29 @@ class Rectangle(Base):
         except IndexError:
             pass
 
+    def to_dictionary(self):
+        '''
+            Returns a dictionary representation of this class
+        '''
+        return {'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
+                'height': getattr(self, "height"),
+                'width': getattr(self, "width")}
+
+    @staticmethod
+    def setter_validation(attribute, value):
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(attribute))
+        if attribute == "x" or attribute == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(attribute))
+        elif value <= 0:
+            raise ValueError("{} must be > 0".format(attribute))
+
     def __str__(self):
         '''
             Overwritting the str method
         '''
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
-
-    def to_dictionary(self):
-        '''
-        Returns the dictionary representation of a Rectangle
-        '''
-        return {
-            'id': self.id,
-            'width': self.width,
-            'height': self.height,
-            'x': self.x,
-            'y': self.y
-        }
