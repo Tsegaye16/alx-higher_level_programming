@@ -7,7 +7,7 @@ from models.base import Base
 
 class Rectangle(Base):
     '''
-        Defining the Rectangle class
+        Defining the Rectangle class that
         Inherits from:
             Base
     '''
@@ -22,14 +22,14 @@ class Rectangle(Base):
     @property
     def width(self):
         '''
-            Returning private attribute
+            display private attribute(width)
         '''
         return self.__width
 
     @width.setter
     def width(self, value):
         '''
-            Setting private attribute
+            Set private variable(width)
         '''
         self.setter_validation("width", value)
         self.__width = value
@@ -37,14 +37,14 @@ class Rectangle(Base):
     @property
     def height(self):
         '''
-            Returning private attribute
+            display private variable(height)
         '''
         return self.__height
 
     @height.setter
     def height(self, value):
         '''
-            Setting private attribute
+            Set private variable(height)
         '''
         self.setter_validation("height", value)
         self.__height = value
@@ -52,14 +52,14 @@ class Rectangle(Base):
     @property
     def x(self):
         '''
-            Returning private attribute
+            display private variable(x)
         '''
         return self.__x
 
     @x.setter
     def x(self, value):
         '''
-            Setting private attribute
+            set private variable(x)
         '''
         self.setter_validation("x", value)
         self.__x = value
@@ -67,27 +67,27 @@ class Rectangle(Base):
     @property
     def y(self):
         '''
-            Returning private attribute
+            Returning private variable(y)
         '''
         return self.__y
 
     @y.setter
     def y(self, value):
         '''
-            Setting private attribute
+            set private variable(y)
         '''
         self.setter_validation("y", value)
         self.__y = value
 
     def area(self):
         '''
-            Returns the area of the rectangle
+            display rectangle's area
         '''
         return (self.height * self.width)
 
     def display(self):
         '''
-            Prints to stdout the representation of the rectangle
+            display rectangle stdout representation
         '''
         rectangle = ""
         print("\n" * self.y, end="")
@@ -114,7 +114,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         '''
-            Returns a dictionary representation of this class
+            deiplay a representation of dictionary for this class
         '''
         return {'x': getattr(self, "x"),
                 'y': getattr(self, "y"),
@@ -134,7 +134,7 @@ class Rectangle(Base):
 
     def __str__(self):
         '''
-            Overwritting the str method
+            Overwritting the str(string) method
         '''
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)

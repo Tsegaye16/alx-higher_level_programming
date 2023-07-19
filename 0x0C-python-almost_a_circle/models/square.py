@@ -1,43 +1,42 @@
 #!/usr/bin/python3
-"""Define Rectangle Class
-"""
-
-from models.rectangle import Rectangle
+'''defining square class
+'''
+from modules.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Module Representation of Square
-"""
+    """module of square
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initialization a Square
-        """
+        '''initialising a square module
+        '''
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """module Square size getter
-        """
+        '''detting the size of square
+        '''
         return self.width
 
     @size.setter
     def size(self, value):
-        """module Square size setter
-        """
+        '''setting the size of square
+        '''
         self.width = value
         self.height = value
 
     def __str__(self):
-        """module string represation of square
-        """
+        '''string representation of square class
+        '''
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
                                                          self.x,
                                                          self.y,
                                                          self.width)
 
     def update(self, *args, **kwargs):
-        """module update square
-        """
+        '''updating square module
+        '''
         if len(args):
             for i, arg in enumerate(args):
                 if i == 0:
@@ -54,8 +53,8 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
-        """retrun dictonary
-        """
+        '''display dictonary
+        '''
         return {
             "id": self.id,
             "size": self.size,
