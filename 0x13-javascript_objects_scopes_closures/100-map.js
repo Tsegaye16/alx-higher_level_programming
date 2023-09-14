@@ -1,4 +1,11 @@
 #!/usr/bin/node
-const list = require('./100-info.js').list;
-console.log(list);
-console.log(list.map((item, index) => item * index));
+// create a new list from the given
+
+const array = require('./100-data').list;
+
+console.log(array);
+let cont = 0;
+const map1 = array.map(function (x) {
+  return (x * cont++);
+});
+console.log(map1);
