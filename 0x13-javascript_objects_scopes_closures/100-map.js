@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // mapping new array from given
 
-const array = require('./100-info.js').array;
+const array = require('./100-info.js').list;
 
 console.log(array);
 let cont = 0;
