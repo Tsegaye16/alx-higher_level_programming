@@ -17,5 +17,6 @@ if __name__ == '__main__':
                  WHERE name LIKE BINARY '{}' \
                  ORDER BY states.id ASC".format(argv[4]))
     rows = cur.fetchall()
+
     for i in rows:
         print(i)
